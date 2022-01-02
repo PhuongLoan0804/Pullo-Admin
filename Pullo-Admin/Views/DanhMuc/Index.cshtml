@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Pullo_Admin.Models.DanhMuc>
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <a asp-area="" asp-controller="DanhMuc" asp-action="CreateDM"><i class="btn btn-success btn-sm">Thêm</i></a>
+
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                Mã danh mục
+            </th>
+            <th>
+                Tên danh mục
+            </th>
+            <th>
+                Hành động
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.MADM
+                </td>
+                <td>
+                    @item.TENDM
+                </td>
+                <td>
+                    <a href="~/DanhMuc/ViewDM?madm=@item.MADM">
+                        <i class="fa fa-edit btn btn-info btn-sm"></i>
+                    </a> |
+                    <a href="~/DanhMuc/DeleteDM?madm=@item.MADM">
+                        <i class="btn btn-danger btn-sm">Xóa</i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

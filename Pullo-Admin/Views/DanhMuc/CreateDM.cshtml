@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "CreateDM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <h4>THÊM DANH MỤC</h4>
+
+        
+
+        <form action="/DanhMuc/ThemDM" method="post">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="TenDM">Tên danh mục</label> <input class="form-control" type="text" name="TENDM" id="TENDM" /><br>
+                </div>
+            </div>
+            <div class="row mb-6">
+                <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input type="submit" value="Tạo" class="btn btn-success btn-md" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <a asp-area="" asp-controller="DanhMuc" asp-action="Index"><i class="btn btn-warning btn-md">Trở lại</i></a>
+                </div>
+            </div>
+        </form>
+
+        <!-- 2 column grid layout for inline styling -->
+        
+</body>
+

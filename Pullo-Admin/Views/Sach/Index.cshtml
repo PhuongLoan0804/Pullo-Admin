@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Pullo_Admin.Models.Sach>
+@{
+    ViewBag.Title = "Danh mục sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <a asp-area="" asp-controller="Sach" asp-action="CreateSach"><i class="btn btn-success btn-sm">Thêm</i></a>
+
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                #ISBN
+            </th>
+            <th>
+                IMG
+            </th>
+            <th>
+                Chi tiết
+            </th>
+            <th>
+                Thể loại
+            </th>
+            <th>
+                Giá bán
+            </th>
+            <th style="width: 120px">
+                Hành động
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td style="text-align: center">
+            @item.ISBN
+        </td>
+        <td>
+            <img style="width: 120px; height: 160px" src="@item.URL"/>
+        </td>
+        <td>
+            <p>Tiêu đề: <b>@item.TENSACH</b></p>
+            <p>Tác giả: <b>@item.TACGIA</b></p>
+            <p><small>Mô tả: <b>@item.MOTA</b></small></p>
+        </td>
+        <td>
+            @item.MADM
+        </td>
+        <td style="text-align: center">
+            @item.GIATIEN
+        </td>
+        <td >
+            <a href="~/Sach/ViewSach?isbn=@item.ISBN">
+                <i class="fa fa-edit btn btn-info btn-sm"></i>
+            </a> |
+            <a href="~/Sach/DeleteSach?isbn=@item.ISBN">
+                <i class="btn btn-danger btn-sm">Xóa</i>
+            </a>
+        </td>
+    </tr>
+        }
+
+    </table>
+</body>

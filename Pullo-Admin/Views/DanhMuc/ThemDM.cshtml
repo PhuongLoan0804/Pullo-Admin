@@ -1,0 +1,12 @@
+﻿@using Pullo_Admin.Models;
+@model DanhMuc
+@{
+    ViewData["Title"] = "Thông tin lấy được từ form";
+}
+@{
+
+    <p>@ViewData["ThongBao"]</p>
+    <div class="col">
+        <a asp-area="" asp-controller="DanhMuc" asp-action="Index"><i class="btn btn-warning btn-sm">Trở lại</i></a>
+    </div>
+}
